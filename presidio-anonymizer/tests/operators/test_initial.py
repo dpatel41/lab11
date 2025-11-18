@@ -17,3 +17,8 @@ def test_correct_name():
 def test_given_value_for_initial(input_text, initials):
     result = Initial().operate(input_text)
     assert result == initials
+
+def test_initials_remove_extra_whitespace():
+    input_text = "     Eastern    Michigan   University "
+    expected = "E. M. U."
+    assert Initial().operate(input_text) == expected
